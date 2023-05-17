@@ -134,7 +134,17 @@ Optional variables (by default undefined):
 - You can set custom user uid and group gid for homogeneity across multiple servers. For example:
   * `tomcat_user_uid`: 500
   * `tomcat_group_gid`: 500
-
+- You can set multiple virtual hosts as follows:
+  * 
+  ```yaml
+  tomcat_virtual_hosts:
+    - name: example.org
+      appBase: /mnt/path/to/app0
+      unpackWars: true
+      autoDeploy: false
+    - name: subdomain.example.org
+      appBase: /mnt/path/to/app1
+  ```
 In case of uninstallation:
 - `tomcat_state`: absent
   * To uninstall tomcat that was installed using this role, set this variable to "absent". Default value is "present".

@@ -83,3 +83,5 @@ tomcat_uninstall_remove_group: True
 tomcat_uninstall_remove_java: False
 
 tomcat_uninstall_remove_all: False
+
+tomcat_virtual_hosts: []

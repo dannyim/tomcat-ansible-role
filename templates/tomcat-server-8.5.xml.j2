@@ -182,6 +182,16 @@
                pattern="%h %l %u %t &quot;%r&quot; %s %b" />
 
       </Host>
+{% for vhost in tomcat_virtual_hosts %}
+      <Host name="{{ vhost.name }}" appBase="{{ vhost.appBase }}"
+               unpackWar="{{ vhost.unpackWars | default('true', true) }}" autoDeploy="{{ vhost.autoDeploy | default('false', true) }}">
+
+        <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs"
+               prefix="{{ vhost.name }}_access_log" suffix=".txt"
+               pattern="%h %l %u %t &quot;%r&quot; %s %b" />
+
+      </Host>
+{% endfor %}
     </Engine>
   </Service>
 </Server>
