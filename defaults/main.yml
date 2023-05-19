@@ -53,6 +53,15 @@ tomcat_ajp_listen_address: "::1"
 tomcat_ajp_secret: "my-@jp-s3cr3t"
 tomcat_ajp_secret_required: True
 
+tomcat_ssl_enabled: False
+tomcat_ssl_port: 8443
+tomcat_ssl_max_threads: 150
+tomcat_ssl_certificatefile:
+tomcat_ssl_keyfile:
+tomcat_ssl_chainfile:
+tomcat_ssl_cafile:
+
+
 tomcat_service_enabled_on_startup: True
 
 tomcat_users: []
