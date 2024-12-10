@@ -105,8 +105,12 @@
                maxThreads="{{ tomcat_ssl_max_threads }}" SSLEnabled="true"
                SSLCertificateFile="{{ tomcat_ssl_certificatefile }}"
                SSLCertificateKeyFile="{{ tomcat_ssl_keyfile }}"
+{% if tomcat_ssl_chainfile %}
                SSLCertificateChainFile="{{ tomcat_ssl_chainfile }}"
+{% endif %}
+{% if tomcat_ssl_cafile %}
                SSLCACertificateFile="{{ tomcat_ssl_cafile }}"
+{% endif %}
     />
 {% endif %}
     <!--
